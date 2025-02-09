@@ -9,15 +9,6 @@ on:
     - cron: '0 22 * * *'
 
 jobs:
-  check-soompi-feed:
-    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
-    with:
-      rss_url: 'https://www.soompi.com/feed'
-      keyword: "K-pop News"
-    secrets:
-        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
-
   check-blackpink-feed:
     uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
     with:
