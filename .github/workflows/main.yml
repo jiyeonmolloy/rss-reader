@@ -20,6 +20,12 @@ jobs:
       rss_url: 'https://www.reddit.com/r/BlackPink.rss'
       keyword: "BlackPink News"
 
+  check-aespa-feed:
+    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
+    with:
+      rss_url: 'https://www.reddit.com/r/Aespa.rss'
+      keyword: "Aespa News"
+
   check-xcode-release:
     uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
     with:

@@ -9,9 +9,16 @@ def fetch_latest_release(rss_url, keyword="release", num_entries=5):
         # Get the latest entries (up to num_entries)
         latest_entries = feed.entries[:num_entries]
         
+        # Accumulate feed information
+        feed_infos = []
         for i, entry in enumerate(latest_entries, start=1):
             feed_info = entry.title
-            print(f"{i}. The latest {keyword} is: {feed_info}")
+            feed_infos.append(f"{i}. {feed_info}")
+        
+        # Print all feed information
+        print(f"The latest {keyword}s are:")
+        for info in feed_infos:
+            print(info)
     else:
         print("No entries found in the feed.")
 
