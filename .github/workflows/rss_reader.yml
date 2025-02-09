@@ -32,4 +32,4 @@ jobs:
 
     - name: Run RSS Reader
       run: |
-        python rss_reader.py ${{ inputs.rss_url }} ${{ inputs.keyword }}
+        python rss_reader.py "${{ inputs.rss_url }}" "${{ inputs.keyword }}"
