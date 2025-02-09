@@ -5,8 +5,7 @@ on:
     branches:
       - main
   schedule: 
-    # Run every day at 10 AM NZST
-    - cron: '0 22 * * *'
+    - cron: '0 22 * * 1'
 
 jobs:
   check-blackpink-feed:
@@ -17,18 +16,18 @@ jobs:
     secrets:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-  # check-aespa-feed:
-  #   uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
-  #   with:
-  #     rss_url: 'https://www.reddit.com/r/Aespa.rss'
-  #     keyword: "Aespa News"
-  #   secrets:
-  #       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  check-aespa-feed:
+    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
+    with:
+      rss_url: 'https://www.reddit.com/r/Aespa.rss'
+      keyword: "Aespa News"
+    secrets:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-  # check-xcode-release:
-  #   uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
-  #   with:
-  #     rss_url: 'https://xcodereleases.com/api/all.rss'
-  #     keyword: "Xcode Releases"
-  #   secrets:
-  #       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  check-xcode-release:
+    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
+    with:
+      rss_url: 'https://xcodereleases.com/api/all.rss'
+      keyword: "Xcode Releases"
+    secrets:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
