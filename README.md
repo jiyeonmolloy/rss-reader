@@ -3,4 +3,4 @@
 
 ## Local Development
 - `pip install -r requirements.txt`
-- `python rss_reader.py <RSS_FEED_URL>`
+- `python rss_reader.py <RSS_FEED_URL> <Keyword associated with RSS Feed>`

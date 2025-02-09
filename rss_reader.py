@@ -18,9 +18,10 @@ def fetch_latest_release(rss_url, keyword="release"):
         print("No entries found in the feed.")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python rss_reader.py <rss_url>")
+    if len(sys.argv) != 3:
+        print("Usage: python rss_reader.py <rss_url> <keyword>")
         sys.exit(1)
 
     rss_url = sys.argv[1]
-    fetch_latest_release(rss_url)
+    keyword = sys.argv[2]
+    fetch_latest_release(rss_url, keyword)
