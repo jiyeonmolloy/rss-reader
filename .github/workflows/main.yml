@@ -1,0 +1,14 @@
+name: Call RSS Reader
+
+on:
+  push:
+    branches:
+      - main
+  schedule: 
+    - cron: '0 22 * * 6'
+
+jobs:
+  check-xcode-release:
+    uses: jiyeonmolloy/rss_reader/.github/workflows/rss_reader.yml
+    with:
+      rss_url: 'https://xcodereleases.com/api/all.rss'

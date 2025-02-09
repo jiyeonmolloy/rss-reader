@@ -1,0 +1,31 @@
+name: RSS Reader
+
+on:
+  workflow_call:
+    inputs:
+      rss_url:
+        description: 'The RSS feed URL to fetch the latest release from'
+        required: true
+        type: string
+
+jobs:
+  run-rss-reader:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install feedparser
+
+    - name: Run RSS Reader
+      run: |
+        python rss_reader.py ${{ inputs.rss_url }}
