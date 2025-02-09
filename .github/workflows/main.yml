@@ -8,7 +8,14 @@ on:
     - cron: '0 22 * * 6'
 
 jobs:
+  check-soompi-feed:
+    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
+    with:
+      rss_url: 'https://www.soompi.com/feed'
+      keyword: 'K-pop News'
+
   check-xcode-release:
     uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
     with:
       rss_url: 'https://xcodereleases.com/api/all.rss'
+      keyword: 'Xcode Release'

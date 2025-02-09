@@ -7,6 +7,10 @@ on:
         description: 'The RSS feed URL to fetch the latest release from'
         required: true
         type: string
+      keyword:
+        description: 'The keyword associated with the feed'
+        required: true
+        type: string
 
 jobs:
   run-rss-reader:
@@ -28,4 +32,4 @@ jobs:
 
     - name: Run RSS Reader
       run: |
-        python rss_reader.py ${{ inputs.rss_url }}
+        python rss_reader.py ${{ inputs.rss_url }} ${{ inputs.keyword }}

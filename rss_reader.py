@@ -1,7 +1,7 @@
 import feedparser
 import sys
 
-def fetch_latest_release(rss_url):
+def fetch_latest_release(rss_url, keyword="release"):
     # Parse the RSS feed
     feed = feedparser.parse(rss_url)
 
@@ -13,7 +13,7 @@ def fetch_latest_release(rss_url):
         # Extract the title (which usually includes the version)
         latest_version_info = latest_entry.title
         
-        print(f"The latest release is: {latest_version_info}")
+        print(f"The latest {keyword} is: {latest_version_info}")
     else:
         print("No entries found in the feed.")
 
