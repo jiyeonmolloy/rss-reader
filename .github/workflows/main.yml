@@ -9,6 +9,6 @@ on:
 
 jobs:
   check-xcode-release:
-    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml
+    uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
     with:
       rss_url: 'https://xcodereleases.com/api/all.rss'
