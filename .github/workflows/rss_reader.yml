@@ -11,6 +11,9 @@ on:
         description: 'The keyword associated with the feed'
         required: true
         type: string
+    secrets:
+      DISCORD_WEBHOOK_URL:
+        required: true
 
 jobs:
   run-rss-reader:
@@ -31,5 +34,7 @@ jobs:
         pip install feedparser
 
     - name: Run RSS Reader
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       run: |
         python rss_reader.py "${{ inputs.rss_url }}" "${{ inputs.keyword }}"
