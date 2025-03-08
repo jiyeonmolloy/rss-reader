@@ -16,11 +16,11 @@ jobs:
     secrets:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-  check-aespa-feed:
+  check-ji-blog-feed:
     uses: jiyeonmolloy/rss-reader/.github/workflows/rss_reader.yml@main
     with:
-      rss_url: 'https://www.reddit.com/r/Aespa.rss'
-      keyword: "Aespa News"
+      rss_url: 'https://jiyeonmolloy.github.io/index.xml'
+      keyword: "Ji's Blog Posts"
     secrets:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
